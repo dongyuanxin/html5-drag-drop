@@ -1,0 +1,54 @@
+<!-- W3School: HTML5 拖放 http://www.w3school.com.cn/html5/html_5_draganddrop.asp -->
+<!-- HTML5原生拖拽/拖放 Drag & Drop 详解 https://juejin.im/post/5a169d08518825592c07c666 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 200px; 
+      height: 200px;
+      padding: 10px;
+      border: 1px solid #aaaaaa;
+      margin-bottom: 10px;
+      transition: box-shadow .3s ease;
+    }
+
+    #target {
+      width: 50px; 
+      height: 50px;
+      border: 1px solid black;
+      margin: 0 auto;
+    }
+
+    .container.active {
+      border-bottom-width: 0;
+      box-shadow: 0 10px 6px -6px #777;
+    }
+  </style>
+  <script src="./demo.js"></script>
+</head>
+<body>
+  <div 
+    class="container" 
+    ondragenter="onDragEnter(event)" 
+    ondragover="onDragOver(event)" 
+    ondragleave="onDragLeave(event)" 
+    ondrop="onDrop(event)"
+  >
+    <div id="target" draggable="true" ondragstart="onDragStart(event)">
+      被拖拽元素
+    </div>
+  </div>
+  <div
+    class="container" 
+    ondragenter="onDragEnter(event)" 
+    ondragover="onDragOver(event)" 
+    ondragleave="onDragLeave(event)" 
+    ondrop="onDrop(event)"
+  ></div>
+</body>
+</html>
